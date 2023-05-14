@@ -9,9 +9,7 @@ function App() {
   const {title, goal, question} = eng;
   const cups = 8;
 
-  useEffect(() => {
-    console.log(drank);
-  }, [drank]);
+  useEffect(() => {}, [drank]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,7 +21,13 @@ function App() {
       <Text style={styles.question}>{question}</Text>
       <View style={styles.cups}>
         {[...Array(cups)].map((_e, i) => (
-          <Cup key={`cup-${i}`} title={false} qtd={cups} setDrank={setDrank} />
+          <Cup
+            key={`cup-${i}`}
+            title={false}
+            qtd={cups}
+            id={i}
+            setDrank={setDrank}
+          />
         ))}
       </View>
     </SafeAreaView>

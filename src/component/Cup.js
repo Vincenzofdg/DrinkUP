@@ -1,26 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, TouchableOpacity, View, Text} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-function Cup({title, qtd, drank, setDrank}) {
+function Cup({title, qtd, drank, setDrank, id}) {
+  const blueHeight = 1 - drank * 0.125;
+
   const l = 2;
 
   const BigCup = () => {
     return (
-      <View>
-        <View style={StyleSheet.compose(bigCup.mask, bigCup.cup)}>
+      <View style={bigCup.cup}>
+        <LinearGradient
+          colors={['white', '#3498DB']}
+          start={{x: 0.5, y: 0}}
+          end={{x: 0.5, y: 1}}
+          style={bigCup.mask}
+          locations={[0, blueHeight]}>
           <Text style={bigCup.remained}>{l}L</Text>
           <Text style={{alignSelf: 'center'}}>Remained</Text>
-        </View>
-
-        <View style={StyleSheet.compose(bigCup.mask, bigCup.fill)} />
+        </LinearGradient>
       </View>
     );
   };
 
   const SmallCup = () => {
+    const [clicked, setClicked] = useState(false);
+    const press = () => {
+      setClicked(true);
+      setDrank(prev => prev + 1);
+    };
+
     return (
-      <TouchableOpacity onPress={() => setDrank(prev => prev + 1)}>
-        <View style={smallCup.cup}>
+      <TouchableOpacity onPress={press} disabled={clicked}>
+        <View
+          style={StyleSheet.compose(
+            smallCup.cup,
+            clicked && {backgroundColor: '#89CFF0'},
+          )}>
           <Text style={smallCup.volume}>{(l / qtd) * 1000}</Text>
           <Text style={{alignSelf: 'center'}}>ml</Text>
         </View>
@@ -42,18 +58,8 @@ const bigCup = StyleSheet.create({
     borderTopColor: '#fff',
   },
   cup: {
-    backgroundColor: '#fff',
     alignSelf: 'center',
     margin: 25,
-    zIndex: 1,
-  },
-  fill: {
-    backgroundColor: '#144fc6',
-    position: 'absolute',
-    top: 240,
-    left: 107,
-    height: 0,
-    zIndex: 2,
   },
   remained: {
     alignSelf: 'center',
