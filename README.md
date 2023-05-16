@@ -11,9 +11,6 @@ An IOS and Android app that helps user to keep drinking water.
 4. Starting localy
 - Node Version 18: `npm start`
 
-## Dependencies Used:
-1. Linear Gradient (_npm install react-native-linear-gradient_);
-
 <br />
 
 ![image](preview.gif)

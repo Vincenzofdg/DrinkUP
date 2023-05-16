@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.71.8",
-    "react-native-linear-gradient": "^2.6.2"
+    "react-native": "0.71.8"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

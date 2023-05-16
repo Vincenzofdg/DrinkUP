@@ -17,7 +17,7 @@ function App() {
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subTitle}>{goal}</Text>
       </View>
-      <Cup drank={drank} title={true} />
+      <Cup drank={drank} qtd={cups} title={true} />
       <Text style={styles.question}>{question}</Text>
       <View style={styles.cups}>
         {[...Array(cups)].map((_e, i) => (

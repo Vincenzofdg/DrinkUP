@@ -1,24 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useTransition} from 'react';
 import {StyleSheet, TouchableOpacity, View, Text} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 function Cup({title, qtd, drank, setDrank, id}) {
-  const blueHeight = 1 - drank * 0.125;
-
   const l = 2;
 
   const BigCup = () => {
+    const porcent = drank * parseFloat(100 / qtd);
+
     return (
       <View style={bigCup.cup}>
-        <LinearGradient
-          colors={['white', '#3498DB']}
-          start={{x: 0.5, y: 0}}
-          end={{x: 0.5, y: 1}}
-          style={bigCup.mask}
-          locations={[0, blueHeight]}>
-          <Text style={bigCup.remained}>{l}L</Text>
-          <Text style={{alignSelf: 'center'}}>Remained</Text>
-        </LinearGradient>
+        <View
+          style={{
+            height: `${100 - porcent}%`,
+            justifyContent: 'center',
+          }}>
+          <Text style={bigCup.remained}>
+            {(l - (l / qtd) * drank).toFixed(1)}L
+          </Text>
+        </View>
+
+        <View
+          style={{
+            height: `${porcent}%`,
+            backgroundColor: '#3498DB',
+            justifyContent: 'center',
+          }}>
+          <Text style={bigCup.remained}>
+            {(drank * (l / qtd)).toFixed(1)} L
+          </Text>
+        </View>
       </View>
     );
   };
@@ -48,17 +58,17 @@ function Cup({title, qtd, drank, setDrank, id}) {
 }
 
 const bigCup = StyleSheet.create({
-  mask: {
-    width: 160,
-    height: 240,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
-    borderWidth: 3,
+  cup: {
+    backgroundColor: '#fff',
     borderColor: '#144fc6',
     borderTopColor: '#fff',
-  },
-  cup: {
+    borderWidth: 3,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
     alignSelf: 'center',
+    overflow: 'hidden',
+    width: 160,
+    height: 240,
     margin: 25,
   },
   remained: {
