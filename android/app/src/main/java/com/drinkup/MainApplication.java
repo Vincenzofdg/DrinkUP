@@ -1,4 +1,4 @@
-package com.drinkup;
+package com.drinkupwater;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

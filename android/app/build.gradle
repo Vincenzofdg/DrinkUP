@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.drinkup"
+    namespace "com.drinkupwater"
     defaultConfig {
-        applicationId "com.drinkup"
+        applicationId "com.drinkupwater"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
