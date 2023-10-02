@@ -1,11 +1,17 @@
-import React, {useState, useTransition} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
+import Context from '../context/Context';
 import {StyleSheet, TouchableOpacity, View, Text} from 'react-native';
 
-function Cup({title, qtd, drank, setDrank, id}) {
-  const l = 2;
+import {eng} from '../localizedStrings';
+
+function Cup({title, drank, setDrank}) {
+  const {
+    rule: {total, times},
+    reset,
+  } = useContext(Context);
 
   const BigCup = () => {
-    const porcent = drank * parseFloat(100 / qtd);
+    const porcent = drank * parseFloat(100 / times);
 
     return (
       <View style={bigCup.cup}>
@@ -15,7 +21,7 @@ function Cup({title, qtd, drank, setDrank, id}) {
             justifyContent: 'center',
           }}>
           <Text style={bigCup.remained}>
-            {(l - (l / qtd) * drank).toFixed(1)}L
+            {(total - (total / times) * drank).toFixed(1)}L
           </Text>
         </View>
 
@@ -26,7 +32,7 @@ function Cup({title, qtd, drank, setDrank, id}) {
             justifyContent: 'center',
           }}>
           <Text style={bigCup.remained}>
-            {(drank * (l / qtd)).toFixed(1)} L
+            {(drank * (total / times)).toFixed(1)} L
           </Text>
         </View>
       </View>
@@ -35,6 +41,9 @@ function Cup({title, qtd, drank, setDrank, id}) {
 
   const SmallCup = () => {
     const [clicked, setClicked] = useState(false);
+
+    useEffect(() => setClicked(false), [reset]);
+
     const press = () => {
       setClicked(true);
       setDrank(prev => prev + 1);
@@ -47,8 +56,8 @@ function Cup({title, qtd, drank, setDrank, id}) {
             smallCup.cup,
             clicked && {backgroundColor: '#89CFF0'},
           )}>
-          <Text style={smallCup.volume}>{(l / qtd) * 1000}</Text>
-          <Text style={{alignSelf: 'center'}}>ml</Text>
+          <Text style={smallCup.volume}>{(total / times) * 1000}</Text>
+          <Text style={{alignSelf: 'center'}}>{eng.measure}</Text>
         </View>
       </TouchableOpacity>
     );

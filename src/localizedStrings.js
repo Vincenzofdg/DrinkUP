@@ -1,5 +1,11 @@
 export const eng = {
   title: 'Drink Water',
-  goal: 'Goal: 2 Liters',
+  goal: t => `Goal: ${t} Liters`,
   question: 'How many glasses of water that you have drank?',
+  measure: 'ml',
+
+  modal: {
+    content: 'Congratulations !!\n ashdiahsdahs',
+    button: 'ok !!',
+  },
 };
