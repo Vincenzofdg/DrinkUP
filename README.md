@@ -14,3 +14,15 @@ An IOS and Android app that helps user to keep drinking water.
 <br />
 
 ![image](preview.gif)
+
+
+
+changing the name or the package name of my application
+
+npm install react-native-rename
+
+changing version 
+
+npm install react-native-version
+
+npx react-native-version --never-amend

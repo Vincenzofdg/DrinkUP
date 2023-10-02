@@ -1,6 +1,6 @@
 {
   "name": "DrinkUp",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.71.8"
+    "react-native": "0.71.8",
+    "react-native-rename": "^3.2.13",
+    "react-native-version": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
