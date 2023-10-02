@@ -5,7 +5,7 @@ export const eng = {
   measure: 'ml',
 
   modal: {
-    content: 'Congratulations !!\n ashdiahsdahs',
+    content: 'Congratulations !!\nyou have achieved your goal.',
     button: 'ok !!',
   },
 };
