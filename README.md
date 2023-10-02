@@ -1,5 +1,5 @@
 ## Description:
-An IOS and Android app that helps user to keep drinking water......
+An IOS and Android app that helps user to keep drinking water =)
 
 ## Starting Project:
 1. Cloning the repository
