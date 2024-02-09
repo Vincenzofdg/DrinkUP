@@ -18,10 +18,10 @@ Our app does not use cookies or similar technologies to track or store informati
 While we do not collect personal information, we take appropriate measures to ensure the security of the information provided by users during app usage. We implement industry-standard security practices to protect data against unauthorized access or misuse.
 
 6. Links to Third-Party Websites
-Our app may contain links to third-party websites, such as social media or partner websites. This Privacy Policy does not apply to those websites, so we recommend that users review the privacy policies of those third parties before providing any information.
+Our app does not links to third-party websites, such as social media or partner websites.
 
 7. Children
-Our app is not intended for children under the age of 13. We do not knowingly collect personal information from children. If a parent or guardian discovers that their child has provided us with personal information without proper consent, we request that they contact us so that we can remove such information from our records.
+Our app is not intended for children under the age of 4. We do not knowingly collect personal information from children. If a parent or guardian discovers that their child has provided us with personal information without proper consent, we request that they contact us so that we can remove such information from our records.
 
 8. Changes to this Privacy Policy
 We reserve the right to update this Privacy Policy occasionally. Any changes will be posted on this page, and the most recent revision date will be indicated at the beginning of the document.
