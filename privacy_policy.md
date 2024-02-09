@@ -29,6 +29,6 @@ We reserve the right to update this Privacy Policy occasionally. Any changes wil
 9. Contact
 If you have any questions or concerns about this Privacy Policy or the use of the app, please contact us using the following contact information:
 
-vincenzofdg.dev@gmail.com
+vincenzofdg.dev@icloud.com
 
 This Privacy Policy is effective as of the publication date and applies to all users of our water drinking app.
